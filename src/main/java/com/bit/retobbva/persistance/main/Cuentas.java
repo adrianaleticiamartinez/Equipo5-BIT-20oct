@@ -1,8 +1,10 @@
 package com.bit.retobbva.persistance.main;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,9 @@ public class Cuentas {
 
 	@Column(name="cuenta")
 	public String cuenta;
+	
+    @OneToOne(mappedBy = "cuentas", cascade = CascadeType.ALL)
+    private Datos datos;
 	
 	public String getIdCliente() {
 		return idCliente;
@@ -36,6 +41,12 @@ public class Cuentas {
 	}
 	public void setCuenta(String cuenta) {
 		this.cuenta = cuenta;
+	}
+	public Datos getDatos() {
+		return datos;
+	}
+	public void setDatos(Datos datos) {
+		this.datos = datos;
 	}
 
 }
