@@ -31,6 +31,7 @@ public class Datos {
 		case manager:
 			
 			MockClient mockManager = getCompleteClient();
+			
 			break;
 
 		case validador:

@@ -21,6 +21,50 @@ public class Usuario {
 	@Column(name="perfil")
 	private Perfil perfil;
 	
+	@Column(name="segmento")
+	private String segmento;
+	
+	@Column(name="ubicacion")
+	private String ubicacion;
+	
+	@Column(name="area")
+	private String area;
+	
+	@Column(name="nombre")
+	private String nombre;
+	
+	public String getSegmento() {
+		return segmento;
+	}
+
+	public void setSegmento(String segmento) {
+		this.segmento = segmento;
+	}
+
+	public String getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public String getIdCliente() {
 		return idCliente;
 	}
