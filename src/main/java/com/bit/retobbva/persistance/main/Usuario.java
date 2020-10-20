@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.bit.retobbva.persistance.mock.Perfil;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -13,9 +15,12 @@ public class Usuario {
 	@Column(name="idCliente", unique=true, nullable=false)
 	private String idCliente;
 
-	@Column(name="password")
+	@Column(name="auth")
 	private String password;
 
+	@Column(name="perfil")
+	private Perfil perfil;
+	
 	public String getIdCliente() {
 		return idCliente;
 	}
@@ -30,6 +35,14 @@ public class Usuario {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Perfil getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
 	
 }
