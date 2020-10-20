@@ -14,8 +14,25 @@ public class Credenciales {
 	@Id
 	@Column(name="idCliente", unique=true, nullable=false)
 	public String idCliente;
-	
-    @OneToOne(mappedBy = "cuentas", cascade = CascadeType.ALL)
-    private Datos datos;
 
+	 @OneToOne(mappedBy = "cuentas", cascade = CascadeType.ALL)
+	    private Datos datos;
+	 
+	public Datos getDatos() {
+		return datos;
+	}
+
+	public void setDatos(Datos datos) {
+		this.datos = datos;
+	}
+
+	public String getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(String idCliente) {
+		this.idCliente = idCliente;
+	}
+	
+	
 }
