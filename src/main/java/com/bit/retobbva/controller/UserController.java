@@ -25,7 +25,7 @@ public class UserController {
 		
 		if(userService.isAuth(auth)) {
 			Usuario usuario = userService.findOne(auth.getUser());
-			MockClient cliente =  clientService.getClientByRole(usuario.getPerfil());
+			MockClient cliente =  clientService.getClientByRole(usuario.getPerfil(), auth.getIdCliente());
 			
 		}
 			
