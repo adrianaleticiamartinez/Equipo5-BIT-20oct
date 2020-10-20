@@ -6,15 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Authentication")
-public class Authentication {
+@Table(name = "usuario")
+public class Usuario {
 
 	@Id
 	@Column(name="idCliente", unique=true, nullable=false)
-	public String idCliente;
+	private String idCliente;
 
 	@Column(name="password")
-	public String password;
+	private String password;
 
 	public String getIdCliente() {
 		return idCliente;

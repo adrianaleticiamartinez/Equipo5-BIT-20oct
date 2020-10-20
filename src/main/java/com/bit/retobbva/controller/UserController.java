@@ -8,20 +8,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bit.retobbva.persistance.main.Usuario;
 import com.bit.retobbva.persistance.mock.Auth;
-import com.bit.retobbva.service.AuthService;
+import com.bit.retobbva.service.UserService;
 
 @RestController
 public class UserController {
 
-	@Autowired AuthService authService;
+	@Autowired UserService userService;
 
-	@RequestMapping(value={"/client/{id}"})
+	@RequestMapping(value={"/client"})
 	@GetMapping
-	public ResponseEntity<?> getClient(@PathVariable("id") String id, @RequestBody Auth auth) {
+	public ResponseEntity<?> getClient(@RequestBody Auth auth) {
 		
-		
-		return ResponseEntity.ok(list);
+		if(userService.isAuth(auth)) {
+			Usuario usuario = userService.findOne(auth.getUser());
+			
+		}
+			
+		return ResponseEntity.ok("");
 		
 	}
 
