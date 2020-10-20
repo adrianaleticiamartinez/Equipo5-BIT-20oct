@@ -3,6 +3,7 @@ package com.bit.retobbva.persistance.mock;
 import java.util.Date;
 
 public class MockClient {
+	
 	public String idCliente;
 	public String nombre;
 	public String apellidoPaterno;
@@ -16,6 +17,7 @@ public class MockClient {
 	public String numeroID;
 	public String cuenta;
 	public String email;
+	
 	public String getIdCliente() {
 		return idCliente;
 	}

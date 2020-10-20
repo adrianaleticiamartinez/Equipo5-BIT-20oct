@@ -27,10 +27,37 @@ public class Datos {
 
 	public MockClient getMock(Perfil perfil) {
 		
-		MockClient mock = new MockClient();
-		
-		
+		switch (perfil) {
+		case manager:
+			
+			MockClient mockManager = getCompleteClient();
+			break;
+
+		case validador:
+			
+			MockClient mockValidator = getValidator();
+			break;
+
+		case restringido:
+			MockClient mockRestringido = getValidator();			
+			break;
+
+			
+		default:
+			break;
+		}
 		
 		return null;
+	}
+
+	private MockClient getValidator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private MockClient getCompleteClient() {
+		MockClient mock = new MockClient();
+		
+		return mock;
 	}
 }
